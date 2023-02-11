@@ -31,7 +31,7 @@ class LocalStorage private constructor() {
 
     //save last numbers in matrix
     fun saveLastNumbers(numbers: String) = instances.edit().putString("numbers", numbers).apply()
-    fun getLastNumbers() : String = instances.getString("numbers", "").toString()
+    fun getLastNumbers() : String = instances.getString("numbers", "0").toString()
 
     //save state before last state
     fun saveUndoNumbers(numbers: String) = instances.edit().putString("undoNumbers", numbers).apply()

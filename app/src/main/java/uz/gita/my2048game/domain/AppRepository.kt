@@ -1,10 +1,13 @@
 package uz.gita.my2048game.domain
 
+import androidx.annotation.Keep
+import timber.log.Timber
 import uz.gita.my2048game.data.LocalStorage
 import uz.gita.my2048game.utils.show
 import uz.gita.my2048game.utils.timber
 import kotlin.random.Random
 
+@Keep
 class AppRepository private constructor() {
     companion object {
         private lateinit var instance: AppRepository
@@ -17,19 +20,26 @@ class AppRepository private constructor() {
     }
 
     var localStorage: LocalStorage = LocalStorage.getInstance()
-    var score = localStorage.getLastScore();
-    var bestScore1 = localStorage.getBestScore();
+    var score = localStorage.getLastScore()
+    var bestScore1 = localStorage.getBestScore()
 
 
     private val ADD_AMOUNT = 2
-    val array = arrayOf(arrayOf(0, 0, 0, 0), arrayOf(0, 0, 0, 0), arrayOf(0, 0, 0, 0), arrayOf(0, 0, 0, 0))
+    val array =
+        arrayOf(arrayOf(0, 0, 0, 0), arrayOf(0, 0, 0, 0), arrayOf(0, 0, 0, 0), arrayOf(0, 0, 0, 0))
 
     init {
         if (localStorage.getIsFirstRun()) {
             start()
             localStorage.setIsFirstRun(false)
         } else {
-            getLastNumbers()
+            try {
+                getLastNumbers()
+            } catch (e: java.lang.NumberFormatException) {
+                Timber.d(e.message)
+                start()
+                localStorage.setIsFirstRun(false)
+            }
         }
     }
 
@@ -71,7 +81,6 @@ class AppRepository private constructor() {
         bestScore1 = localStorage.getUndoBestScore()
         return localStorage.getUndoBestScore()
     }
-
 
     fun getUndoNumbers(): Array<Array<Int>> {
         val list = localStorage.getUndoNumbers().split("@@@")

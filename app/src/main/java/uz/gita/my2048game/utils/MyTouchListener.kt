@@ -1,17 +1,19 @@
 package uz.gita.my2048game.utils
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.View
 import uz.gita.my2048game.data.MySide
-import java.lang.Math.abs
+import kotlin.math.abs
 
 
-class MyTouchListener(private val context: Context) : View.OnTouchListener {
+class MyTouchListener(context: Context) : View.OnTouchListener {
     private val gesture = GestureDetector(context, MyGestureListener())
-    private var sideListener : ((MySide) -> Unit) ?= null
+    private var sideListener: ((MySide) -> Unit)? = null
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onTouch(v: View?, event: MotionEvent?): Boolean {
         return gesture.onTouchEvent(event)
     }
@@ -23,7 +25,12 @@ class MyTouchListener(private val context: Context) : View.OnTouchListener {
             return true
         }
 
-        override fun onFling(oldEvent: MotionEvent, newEvent: MotionEvent, velocityX: Float, velocityY: Float): Boolean {
+        override fun onFling(
+            oldEvent: MotionEvent,
+            newEvent: MotionEvent,
+            velocityX: Float,
+            velocityY: Float
+        ): Boolean {
             var bool = false
             val diffX = oldEvent.x - newEvent.x
             val diffY = oldEvent.y - newEvent.y
@@ -54,7 +61,7 @@ class MyTouchListener(private val context: Context) : View.OnTouchListener {
         }
     }
 
-    fun setSideListener(f : (MySide) -> Unit) {
+    fun setSideListener(f: (MySide) -> Unit) {
         sideListener = f
     }
 }

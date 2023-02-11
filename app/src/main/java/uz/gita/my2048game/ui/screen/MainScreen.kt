@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.PopupMenu
 import android.widget.TextView
+import androidx.annotation.Keep
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.LinearLayoutCompat
 import androidx.core.view.get
@@ -22,7 +23,7 @@ import uz.gita.my2048game.utils.MyTouchListener
 import uz.gita.my2048game.utils.background
 import uz.gita.my2048game.utils.showToast
 
-
+@Keep
 class MainScreen : Fragment(R.layout.screen_main) {
     private var _binding: ScreenMainBinding? = null
     private val binding get() = _binding!!

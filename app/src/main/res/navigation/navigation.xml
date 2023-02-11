@@ -8,5 +8,14 @@
         android:id="@+id/mainScreen"
         android:name="uz.gita.my2048game.ui.screen.MainScreen"
         android:label="screen_main"
-        tools:layout="@layout/screen_main" />
+        tools:layout="@layout/screen_main" >
+        <action
+            android:id="@+id/action_mainScreen_to_recordsScreen"
+            app:destination="@id/recordsScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/recordsScreen"
+        android:name="uz.gita.my2048game.ui.screen.RecordsScreen"
+        android:label="fragment_records"
+        tools:layout="@layout/fragment_records" />
 </navigation>

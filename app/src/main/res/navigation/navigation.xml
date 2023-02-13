@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/mainScreen">
+    app:startDestination="@id/menuScreen">
     <fragment
         android:id="@+id/mainScreen"
         android:name="uz.gita.my2048game.ui.screen.MainScreen"
@@ -18,4 +18,13 @@
         android:name="uz.gita.my2048game.ui.screen.RecordsScreen"
         android:label="fragment_records"
         tools:layout="@layout/fragment_records" />
+    <fragment
+        android:id="@+id/menuScreen"
+        android:name="uz.gita.my2048game.ui.screen.MenuScreen"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuScreen_to_mainScreen"
+            app:destination="@id/mainScreen" />
+    </fragment>
 </navigation>

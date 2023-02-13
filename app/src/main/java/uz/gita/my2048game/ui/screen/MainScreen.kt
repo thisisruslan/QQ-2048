@@ -15,6 +15,7 @@ import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import by.kirich1409.viewbindingdelegate.viewBinding
 import uz.gita.my2048game.R
 import uz.gita.my2048game.data.MySide
 import uz.gita.my2048game.databinding.ScreenMainBinding
@@ -25,14 +26,12 @@ import uz.gita.my2048game.utils.showToast
 
 @Keep
 class MainScreen : Fragment(R.layout.screen_main) {
-    private var _binding: ScreenMainBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding(ScreenMainBinding::bind)
     private val viewModel by viewModels<MainViewModel>()
     private val views = ArrayList<TextView>(16)
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        _binding = ScreenMainBinding.bind(view)
         loadView()
 
 
@@ -110,7 +109,6 @@ class MainScreen : Fragment(R.layout.screen_main) {
         binding.score.text = it.toString()
     }
     private val arrayObserver = Observer<Array<Array<Int>>> {
-
         for (i in it.indices) {
             for (j in it[i].indices) {
                 views[i * 4 + j].apply {
@@ -178,16 +176,10 @@ class MainScreen : Fragment(R.layout.screen_main) {
         }
     }
 
-
     override fun onPause() {
         super.onPause()
         viewModel.saveLastNumbers()
         viewModel.saveLastScore(viewModel.getScore())
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
 }

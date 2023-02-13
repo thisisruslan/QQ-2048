@@ -5,7 +5,8 @@ import android.content.SharedPreferences
 import uz.gita.my2048game.app.App
 
 class LocalStorage private constructor() {
-    private val instances: SharedPreferences = App.instance.getSharedPreferences("storage", Context.MODE_PRIVATE)
+    private val instances: SharedPreferences =
+        App.instance.getSharedPreferences("storage", Context.MODE_PRIVATE)
 
     companion object {
         private lateinit var instances: LocalStorage
@@ -17,7 +18,7 @@ class LocalStorage private constructor() {
             return instances
         }
     }
-//    var isFirstRun : Boolean = true
+
     fun setIsFirstRun(state: Boolean) = instances.edit().putBoolean("isFirst", state).apply()
     fun getIsFirstRun() : Boolean = instances.getBoolean("isFirst", true)
 

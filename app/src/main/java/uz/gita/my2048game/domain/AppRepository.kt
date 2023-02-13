@@ -121,7 +121,7 @@ class AppRepository private constructor() {
         return true
     }
 
-    fun isFull(): Boolean {
+    private fun isFull(): Boolean {
         for (i in 0 until 4) {
             for (j in 0 until 4) if (array[i][j] == 0) return false
         }

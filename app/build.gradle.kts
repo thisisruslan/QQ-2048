@@ -2,15 +2,15 @@ plugins {
     id("com.android.application")
     id("kotlin-android")
     id("androidx.navigation.safeargs.kotlin")
+    id ("com.google.gms.google-services")
 }
 
 android {
-//    compileSdkVersion = 32
-//    buildToolsVersion = "30.0.3"
+
     compileSdk = 32
 
     defaultConfig {
-        applicationId = "uz.gita.my2048game"
+        applicationId = "me.ruslan1024.kk2048game"
         minSdk = 21
         targetSdk = 32
         versionCode = 2
@@ -82,4 +82,14 @@ dependencies {
      *   viewBinding
      */
     implementation("com.github.kirich1409:viewbindingpropertydelegate-noreflection:1.5.6")
+
+    /**
+     * Firebase
+     */
+    implementation ("com.google.firebase:firebase-bom:31.2.1")
+    implementation ("com.google.firebase:firebase-analytics-ktx:21.2.0")
+    implementation("com.google.firebase:firebase-firestore-ktx:24.4.3")
+
+    implementation ("com.firebaseui:firebase-ui-auth:7.2.0")
+    implementation("com.google.firebase:firebase-auth-ktx:21.1.0")
 }

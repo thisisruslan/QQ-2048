@@ -6,7 +6,7 @@
     app:startDestination="@id/menuScreen">
     <fragment
         android:id="@+id/mainScreen"
-        android:name="uz.gita.my2048game.ui.screen.MainScreen"
+        android:name="me.ruslan1024.kk2048game.ui.screen.MainScreen"
         android:label="screen_main"
         tools:layout="@layout/screen_main" >
         <action
@@ -15,16 +15,24 @@
     </fragment>
     <fragment
         android:id="@+id/recordsScreen"
-        android:name="uz.gita.my2048game.ui.screen.RecordsScreen"
+        android:name="me.ruslan1024.kk2048game.ui.screen.RecordsScreen"
         android:label="fragment_records"
         tools:layout="@layout/fragment_records" />
     <fragment
         android:id="@+id/menuScreen"
-        android:name="uz.gita.my2048game.ui.screen.MenuScreen"
+        android:name="me.ruslan1024.kk2048game.ui.screen.MenuScreen"
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu" >
         <action
             android:id="@+id/action_menuScreen_to_mainScreen"
             app:destination="@id/mainScreen" />
+        <action
+            android:id="@+id/action_menuScreen_to_registerScreen"
+            app:destination="@id/registerScreen" />
     </fragment>
+    <fragment
+        android:id="@+id/registerScreen"
+        android:name="me.ruslan1024.kk2048game.ui.screen.RegisterScreen"
+        android:label="screen_register"
+        tools:layout="@layout/screen_register" />
 </navigation>

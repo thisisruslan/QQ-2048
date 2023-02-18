@@ -1,2 +1,2 @@
-rootProject.name = "My 2048 Game"
+rootProject.name = "KK 2048 Game"
 include (":app")

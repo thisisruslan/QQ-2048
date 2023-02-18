@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "184549904218",
+    "project_id": "kk-2048-game",
+    "storage_bucket": "kk-2048-game.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:184549904218:android:17dec0d0907cd165d8ad63",
+        "android_client_info": {
+          "package_name": "me.ruslan1024.kk2048game"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "184549904218-19mplhhf1032mpq08i0ecjlldkg5bicp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "me.ruslan1024.kk2048game",
+            "certificate_hash": "ed4eef4bb04c79df4fa38be84f4dce71c2cc9858"
+          }
+        },
+        {
+          "client_id": "184549904218-u1fitutnigoh1lupgloq2dhn03pbu0kb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQ4lbE6VnhEwRjLBZMaEBPRumAXSW4ZoM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "184549904218-aqauuprq5p3r6bl2mno6leiga3gcuhni.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

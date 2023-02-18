@@ -3,8 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/main_bg"
-    tools:context="me.ruslan1024.kk2048game.ui.screen.RecordsScreen">
+    tools:context="me.ruslan1024.kk2048game.ui.screen.RegisterScreen">
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:text="Register Screen"
+        android:layout_height="match_parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

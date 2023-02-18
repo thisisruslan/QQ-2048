@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/main_bg"
-    tools:context="uz.gita.my2048game.ui.screen.MenuScreen">
+    tools:context="me.ruslan1024.kk2048game.ui.screen.MenuScreen">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ic_profile"
